@@ -1,3 +1,4 @@
+import { element } from "prop-types";
 import React,{useState} from "react";
 
 
@@ -13,18 +14,31 @@ function ToDoList(){
 
     function addTask(event){
 
+        if (newtask.trim() !== ""){
+            setTask(c => [...c,newtask]);
+            setNewTask("");
+        }
     }
 
-    function DeleteTask(event){
-
+    function DeleteTask(index){
+        const updatedtask = tasks.filter((_,i) => i !== index);
+        setTask(updatedtask);
     }
 
     function Movetaskup(event){
-
+        if(index > 0){
+            const updatedtask = [...tasks];
+            [updatedtask[index],updatedtask[index-1]] = [updatedtask[index-1],updatedtask[index]];
+            setTask(updatedtask);
+        }
     }
 
     function Movetaskdown(event){
-
+        if(index < tasks.length - 1){
+            const updatedtask = [...tasks];
+            [updatedtask[index],updatedtask[index+1]] = [updatedtask[index+1],updatedtask[index]];
+            setTask(updatedtask);
+        }
     }
 
     return (<>
@@ -40,9 +54,11 @@ function ToDoList(){
             {tasks.map((task,index) => 
             <li key={index}>
                 <span className="text">{task}</span>
-                <button className="delete-button" onClick={() => DeleteTask(index)}>Delete</button>
-                <button className="up-button" onClick={Movetaskup}>Move Up</button>
-                <button className="down-button" onClick={Movetaskdown}>Move Down</button>
+                <div className="button-container">
+                    <button className="delete-button" onClick={() => DeleteTask(index)}>Delete</button>
+                    <button className="move-button" onClick={Movetaskup}>Move Up</button>
+                    <button className="move-button" onClick={Movetaskdown}>Move Down</button>
+                </div>
             </li>)}
         </ol>
     </div>
