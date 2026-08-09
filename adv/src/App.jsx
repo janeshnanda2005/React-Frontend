@@ -5,6 +5,7 @@ import Student from './Components/Students.jsx'
 import Button from './Components/Button.jsx'
 import UserGreeting from './Components/UserGreeting.jsx'
 import List from './Components/List.jsx'
+import MyCom from './Components/Ctr.jsx' 
 import SampleText from './Components/SampleText.jsx'
 import ColorPicker from './Components/ColorPicker.jsx'
 import MyComp from './Components/Object.jsx'
@@ -65,7 +66,9 @@ function App() {
 
       <Mycomponent/> */}
 
-      <ToDoList/>
+      {/* <ToDoList/> */}
+
+      <MyCom/>
 
     </>
   );
