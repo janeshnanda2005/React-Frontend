@@ -6,6 +6,7 @@ import Button from './Components/Button.jsx'
 import UserGreeting from './Components/UserGreeting.jsx'
 import List from './Components/List.jsx'
 import MyCom from './Components/Ctr.jsx' 
+import DigitalClock from "./Components/DigitalClock.jsx"
 import SampleText from './Components/SampleText.jsx'
 import ColorPicker from './Components/ColorPicker.jsx'
 import MyComp from './Components/Object.jsx'
@@ -68,7 +69,9 @@ function App() {
 
       {/* <ToDoList/> */}
 
-      <MyCom/>
+      {/* <MyCom/> */}
+
+      <DigitalClock/>
 
     </>
   );
