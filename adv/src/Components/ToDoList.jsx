@@ -5,26 +5,42 @@ import React,{useState} from "react";
 function ToDoList(){
 
 
-    const [tasks,setTask] = useState(["Eat breakfast",'Take a Shower']);
-    const [newtask,setNewTask] = useState("");
+    // const [tasks,setTask] = useState(["Eat breakfast",'Take a Shower']);
+    // const [newtask,setNewTask] = useState("");
+
+    // function handleInputChange(event){
+    //     setNewTask(event.target.value)
+    // }
+
+    // function addTask(event){
+
+    //     if (newtask.trim() !== ""){
+    //         setTask(c => [...c,newtask]);
+    //         setNewTask("");
+    //     }
+    // }
+
+    const [tasks,Settasks] = useState(["eat breakfast,'Do Workout"]);
+    const [newtask,SetNewTask] = useState("");
+
 
     function handleInputChange(event){
-        setNewTask(event.target.value)
+        SetNewTask(event.target,value);
     }
+
 
     function addTask(event){
-
-        if (newtask.trim() !== ""){
-            setTask(c => [...c,newtask]);
-            setNewTask("");
-        }
+        Settasks(c => [...c,newtask]);
+        SetNewTask("")
     }
+
 
     function DeleteTask(index){
         const updatedtask = tasks.filter((_,i) => i !== index);
         setTask(updatedtask);
     }
 
+    
     function Movetaskup(event){
         if(index > 0){
             const updatedtask = [...tasks];
@@ -50,8 +66,20 @@ function ToDoList(){
             <button className="add-button" onClick={addTask}>Add</button>
         </div>
 
-        <ol>
+        {/* <ol>
             {tasks.map((task,index) => 
+            <li key={index}>
+                <span className="text">{task}</span>
+                <div className="button-container">
+                    <button className="delete-button" onClick={() => DeleteTask(index)}>Delete</button>
+                    <button className="move-button" onClick={Movetaskup}>Move Up</button>
+                    <button className="move-button" onClick={Movetaskdown}>Move Down</button>
+                </div>
+            </li>)}
+        </ol> */}
+
+        <ol>
+            {tasks.map((tasks,index)=>
             <li key={index}>
                 <span className="text">{task}</span>
                 <div className="button-container">

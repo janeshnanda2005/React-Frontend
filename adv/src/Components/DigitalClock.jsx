@@ -13,10 +13,24 @@ function DigitalClock(){
         }
     },[])
 
+    function formatTime(){
+        let hours = time.getHours();
+        const minutes  = time.getMinutes();
+        const seconds = time.getSeconds();
+        const merideim = hours >= 12 ? "PM":"AM";
+
+        hours = hours % 12 || 12;
+        return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)} ${merideim}`;
+    }
+
+    function padZero(number){
+        return (number < 10 ?"0":"")+number;
+    }
+
     return (
         <div className="clock-container">
             <class className="clock">
-                <span>00:00:00</span>
+                <span>{formatTime()}</span>
             </class>
         </div>
     )
