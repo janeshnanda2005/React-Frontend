@@ -270,3 +270,8 @@ body{
     text-shadow: 3px 3px 5px hsl(0,0%,0%);
     text-align: center;
 }
+
+.box{
+  border: 3px solid;
+  padding:5px;
+}

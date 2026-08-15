@@ -38,7 +38,6 @@ import React,{useState} from 'react';
 //     </div>)
 // }
 
-
 function Counter(){
 
     const [count,setCount] = useState(0);
