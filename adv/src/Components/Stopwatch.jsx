@@ -7,6 +7,18 @@ function Stopwatch(){
     const intervalRef = useRef(null);
     const startTimeRef = useRef(0);
 
+    // useEffect(() => {
+    //     if(isRunning){
+    //         intervalRef.current = setInterval(() => {
+    //             setElapsedTime(Date.now() - startTimeRef.current);
+    //         },10);
+    //     }
+
+    //     return () => {
+    //         clearInterval(intervalRef.current);
+    //     }
+    // },[isRunning]);
+
     useEffect(() => {
         if(isRunning){
             intervalRef.current = setInterval(() => {
