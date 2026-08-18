@@ -5,7 +5,7 @@ import Student from './Components/Students.jsx'
 import Button from './Components/Button.jsx'
 import UserGreeting from './Components/UserGreeting.jsx'
 import List from './Components/List.jsx'
-import componenta from './Components/Componenta.jsx'
+import ComponentA from './Components/Componenta.jsx'
 import MyCom from './Components/Ctr.jsx' 
 import DigitalClock from "./Components/DigitalClock.jsx"
 import SampleText from './Components/SampleText.jsx'
@@ -15,6 +15,7 @@ import ArrayUpdation from './Components/ArrayUpdate.jsx'
 import Mycomponent from './Components/MyComponent.jsx'
 import ToDoList from './Components/ToDoList.jsx'
 import './App.css'
+import Stopwatch from './Components/Stopwatch.jsx'
 import Counter from './Components/Counter.jsx'
 import react,{useState} from 'react';
 
@@ -74,7 +75,10 @@ function App() {
 
       {/* <DigitalClock/> */}
 
-      <componenta/>
+      {/* <componenta/> */}
+
+      <Stopwatch/>
+
 
     </>
   );
